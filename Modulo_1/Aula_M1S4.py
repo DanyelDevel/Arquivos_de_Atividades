@@ -1,4 +1,4 @@
-#INDICE    0          1          2          3
+# INDICE    0          1          2          3
 """
 nomes = ['Junior', 'Wyllon', 'Kamilla', 'Carlos']
 print(nomes[2])
@@ -6,7 +6,7 @@ print(nomes[2])
 for indice in range(4):
     print(nomes[indice])"""
 
-#INDICE    0          1          2          3
+# INDICE    0          1          2          3
 '''
 nomes = ['Junior', 'Wyllon', 'Kamilla', 'Carlos', 'Sherlon', 'Joao']
 #len() -> length - > Tamanho/Comprimento
@@ -44,7 +44,7 @@ nomes[0] = 'Rafael'
 print(nomes)'''
 
 
-#DICIONÁRIOS {chave: valor}
+# DICIONÁRIOS {chave: valor}
 '''
 cliente = {'Nome': 'Sherlon', 'Idade': 27, 'Senha': 'senha123'}
 
@@ -53,7 +53,7 @@ print(cliente['Nome'])
 print(cliente['Idade'])'''
 
 
-#DICIONÁRIOS {chave: valor}
+# DICIONÁRIOS {chave: valor}
 '''
 cliente = {'Nome': 'Sherlon', 'Idade': 27, 'Senha': 'senha123'}
 
