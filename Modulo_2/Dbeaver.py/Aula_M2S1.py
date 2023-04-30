@@ -25,3 +25,21 @@ c.execute('''CREATE TABLE livros (
 # Salvar as alterações e fechar a conexão
 conn.commit()
 conn.close()
+
+
+# Criar nova coluna de categorias na tabela livros
+
+# Conectar/ criar o banco de dados
+conn =  sqlite3.connect('db.sqlite3')
+
+# Criar um objeto cursor para o comando sql
+c = conn.cursor()
+
+# Comando de alteração
+c.execute('''
+ALTER TABLE livros ADD COLUMN categoria VARCHAR(255) NOT NULL;
+''')
+
+# Salvar as alterações e fechar a conexão
+conn.commit()
+conn.close()
