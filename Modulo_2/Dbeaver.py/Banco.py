@@ -30,25 +30,3 @@ SELECT * from funcionario;)
 conexao.commit()
 conexao.close()
 '''
-
-import sqlite3
-conexao = sqlite3.connect('db.sqlite3')
-sql = conexao.cursor()
-
-sql.execute('''CREATE TABLE categoria (
-        id INT NOT NULL,
-        nome VARCHAR(100),
-                PRIMARY KEY (id)
-);
-
-        CREATE TABLE produto (
-                id INT NOT NULL,
-                nome VARCHAR(100),
-                categoria_id INT NOT NULL,
-                        PRIMARY KEY (id),
-                        FOREIGN KEY (categoria_id) REFERENCES categoria(id)
-        );
-''')
-
-conexao.commit()
-conexao.close()
