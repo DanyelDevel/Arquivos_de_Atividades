@@ -20,9 +20,10 @@ def lista_afazeres():
         for completa in tarefas:
             print(completa)
     if opcao == 2:
-        data = str(input('Digite a data desejada: '))
-        lista = "SELECT * FROM tarefas WHERE data = ?'"
-        datas = c.execute(lista, [data])
+        data = str(input('Digite o mês e ano desejada: '))
+        data1 = '%' + data
+        lista = "SELECT * FROM tarefas WHERE data LIKE ?"
+        datas = c.execute(lista, [data1])
         for dados in datas:
             print(dados)
     if opcao == 3:
