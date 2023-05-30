@@ -1,17 +1,31 @@
 from selenium import webdriver
-from time import sleep
+from selenium.webdriver.common.by import By
+import time
 
-navegador = webdriver.Chrome()
-navegador.get("https://bet7k.com/casino/13697-footballstudio")
+driver = webdriver.Chrome()
+
+driver.get('https://bet7k.com/casino/13697-footballstudio')
 
 email = "danyelhdss@gmail.com"
 senha = "Dks.3211"
 
-Botton_enter = navegador.find_element("xpath", '//*[@id="menu-horizontal"]/div[2]/div/div[2]/div/button[2]').click()
-endereco = navegador.find_element("xpath", '//*[@id="email"]').send_keys(email)
-senha = navegador.find_element('xpath', '//*[@id="password"]').send_keys(senha)
-login = navegador.find_element('xpath', '//*[@id="login"]/div/div[2]/div/form/button').click()
-sleep(15)
+Botão_entra = driver.find_element('xpath' , '//*[@id="menu-horizontal"]/div[2]/div/div[2]/div/button[2]').click()
+Login = driver.find_element('xpath' , '//*[@id="email"]').send_keys(email)
+Senha = driver.find_element('xpath' , '//*[@id="password"]').send_keys(senha)
+Senha = driver.find_element('xpath' , '//*[@id="login"]/div/div[2]/div/form/button').click()
 
-jogadas = navegador.find_element('xpath', 'evolutionSharedFrame').get_attribute()
+while len(driver.find_elements(By.XPATH, '//*[@id="chat-widget"]')) -- 0:
+    time.sleep(2)
 
+idroot = driver.find_element(By.XPATH, '//*[@id="chat-widget"]')
+
+driver.switch_toid(id)
+
+while len(driver.find_elements(By.XPATH, '/html/body/div[4]/div/div[2]/div/div[2]/div[2]/div/div[6]/div[2]/div/div/div[2]')) --0:
+    time.sleep(2)
+
+elemento = driver.find_elements(By.XPATH, '/html/body/div[4]/div/div[2]/div/div[2]/div[2]/div/div[6]/div[2]/div/div/div[2]').text
+
+print(elemento)
+
+# botão de janela flutuante //*[@id="deposit-modal___BV_modal_header_"]/button
