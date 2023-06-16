@@ -10,7 +10,7 @@ init(autoreset = True)
 
 def exibir_menu():
     print(Fore.GREEN + '''        Bem Vindos ao Projeto
-          Sistema de Login
+        Sistema de Login
 Escolha uma Opção
 [1] Cadastrar novo usuário
 [2] Fazer Login
