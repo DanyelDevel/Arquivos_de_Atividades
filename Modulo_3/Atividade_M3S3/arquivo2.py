@@ -1,3 +1,24 @@
+def funcao_calcular_pedido(pedido):
+    cardapio = {
+        100: ('Cachorro Qeunte', 9.0),
+        101: ('Cachorro Quente Duplo', 11.0),
+        102: ('X-Egg', 12.0),
+        103: ('X-Salada', 12.0),
+        104: ('X-Bacon', 14.0),
+        105: ('X-Tudo', 17.0),
+        200: ('Refrigerante Lata', 5.0),
+        201: ('Chá Gelado', 4.0)
+    }
+    total = 0.0
+    for codigo in pedido:
+        if codigo in cardapio:
+            produto, valor = cardapio[codigo]
+            print(f'Voce pediu um {produto} de preco {valor:.2f}')
+            total += valor 
+        else:
+            print('Opcao Invalida')
+    return total
+
 if __name__ == '__main__':
     cardapio = """
     *******************Cardápio*******************
@@ -14,40 +35,14 @@ if __name__ == '__main__':
     ----------------------------------------------
     """
     print(cardapio)
-
-    total = 0.0
-    codigo = int(input('Entre com o código desejado: '))
+    codigos = []
+    codigo = int(input('Digite o codigo:'))
 
     while True:
-        if codigo == 100:
-            print('Você pediu um Cachorro Quente no valor de 9,00')
-            total += 9.00
-        elif codigo == 101:
-            print('Você pediu um Cachorro Quente Duplo no valor de 11,00')
-            total += 11.00
-        elif codigo == 102:
-            print('Você pediu um X-Egg no valor de 12,00')
-            total += 12.00
-        elif codigo == 103:
-            print('Você pediu um X-Salada no valor de 12,00')
-            total += 12.00
-        elif codigo == 104:
-            print('Você pediu um X-Bacon no valor de 14,00')
-            total += 14.00
-        elif codigo == 105:
-            print('Você pediu um X-Tudo no valor de 17,00')
-            total += 17.00
-        elif codigo == 200:
-            print('Você pediu um Refrigerante Lata no valor de 5,00')
-            total += 5.00
-        elif codigo == 201:
-            print('Você pediu um Chá Gelado no valor de 4,00')
-            total += 4.00
+        if codigo in [100, 101, 102, 103, 104 ,105, 200, 201]:
+            codigos.append(codigo)
         else:
-            print('Opção inválida')
-            codigo = int(input('Entre com o código desejado: '))
-            continue
-
+            print('Opcao Invalida')
         print('Deseja pedir mais alguma coisa?')
         print('1 - Sim')
         print('2 - Não')
@@ -57,5 +52,5 @@ if __name__ == '__main__':
             break
 
         codigo = int(input('Entre com o código desejado: '))
-
+    total = funcao_calcular_pedido(codigo)
     print(f'O total a ser pago é: {total:.2f} R$')

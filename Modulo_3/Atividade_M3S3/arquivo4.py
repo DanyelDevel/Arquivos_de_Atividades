@@ -1,6 +1,5 @@
 pecas = []
 
-
 def gerar_codigo():
     tamanho_lista = len(pecas)
     if tamanho_lista > 0:
